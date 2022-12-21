@@ -6,93 +6,93 @@ using UnityEngine;
 
 public class VoiceGenerator : MonoBehaviour
 {
-    private AudioSource audioSource;
-    public AudioClip[] dialogueSoundClips;
+    private AudioSource _audioSource;
+    public AudioClip[] DialogueSoundClips;
     [Range(1, 5)]
-    public int frequencyLevel = 2;
+    public int FrequencyLevel = 2;
     [Range(-3, 3)]
-    public float minPitch = 0.5f;
+    public float MinPitch = 0.5f;
     [Range(-3, 3)]
-    public float maxPitch = 3f;
-    public float dialogueSpeed = 0.04f;
-    public bool stopAudioSource;
-    public bool makePredictable;
+    public float MaxPitch = 3f;
+    public float DialogueSpeed = 0.04f;
+    public bool StopAudioSource;
+    public bool MakeDialoguePredictable;
 
-    public string inputDialogue;
-    public TextMeshProUGUI dialogueText;
+    public string InputDialogue;
+    public TextMeshProUGUI DialogueText;
 
     private void Awake()
     {
-        audioSource = this.gameObject.AddComponent<AudioSource>();
+        _audioSource = this.gameObject.AddComponent<AudioSource>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            StartCoroutine(IterateThroughDialogue(inputDialogue));
+            StartCoroutine(IterateThroughDialogue(InputDialogue));
         }
     }
 
     public IEnumerator IterateThroughDialogue(string line)
     {
         // set the text to the full line, but set the visible characters to 0
-        dialogueText.text = line;
-        dialogueText.maxVisibleCharacters = 0;
+        DialogueText.text = line;
+        DialogueText.maxVisibleCharacters = 0;
 
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
-            PlayDialogueSound(dialogueText.maxVisibleCharacters, dialogueText.text[dialogueText.maxVisibleCharacters]);
-            dialogueText.maxVisibleCharacters++;
-            yield return new WaitForSeconds(dialogueSpeed);
+            PlayDialogueSound(DialogueText.maxVisibleCharacters, DialogueText.text[DialogueText.maxVisibleCharacters]);
+            DialogueText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(DialogueSpeed);
         }
     }
 
     public void PlayDialogueSound(int currentDisplayedCharacterCount, char currentCharacter)
     {
-        if (currentDisplayedCharacterCount % frequencyLevel == 0)
+        if (currentDisplayedCharacterCount % FrequencyLevel == 0)
         {
-            if (stopAudioSource)
+            if (StopAudioSource)
             {
-                audioSource.Stop();
+                _audioSource.Stop();
             }
             AudioClip soundClip = null;
             // create predictable audio from hashing
-            if (makePredictable)
+            if (MakeDialoguePredictable)
             {
                 int hashCode = currentCharacter.GetHashCode();
                 // sound clip
-                int predictableIndex = hashCode % dialogueSoundClips.Length;
-                soundClip = dialogueSoundClips[predictableIndex];
+                int predictableIndex = hashCode % DialogueSoundClips.Length;
+                soundClip = DialogueSoundClips[predictableIndex];
                 // pitch
-                int minPitchInt = (int)(minPitch * 100);
-                int maxPitchInt = (int)(maxPitch * 100);
+                int minPitchInt = (int)(MinPitch * 100);
+                int maxPitchInt = (int)(MaxPitch * 100);
                 int pitchRangeInt = maxPitchInt - minPitchInt;
                 // cannot divide by 0, so if there is no range then skip the selection
                 if (pitchRangeInt != 0)
                 {
                     int predictablePitchInt = (hashCode % pitchRangeInt) + minPitchInt;
                     float predictablePitch = predictablePitchInt / 100f;
-                    audioSource.pitch = predictablePitch;
+                    _audioSource.pitch = predictablePitch;
                 }
                 else
                 {
-                    audioSource.pitch = minPitch;
+                    _audioSource.pitch = MinPitch;
                 }
             }
             // otherwise, randomize the audio
             else
             {
                 // sound clip
-                int randomIndex = Random.Range(0, dialogueSoundClips.Length);
-                soundClip = dialogueSoundClips[randomIndex];
+                int randomIndex = Random.Range(0, DialogueSoundClips.Length);
+                soundClip = DialogueSoundClips[randomIndex];
                 // pitch
-                audioSource.pitch = Random.Range(minPitch, maxPitch);
+                _audioSource.pitch = Random.Range(MinPitch, MaxPitch);
             }
 
             // play sound
-            audioSource.PlayOneShot(soundClip);
+            _audioSource.PlayOneShot(soundClip);
         }
     }
 }

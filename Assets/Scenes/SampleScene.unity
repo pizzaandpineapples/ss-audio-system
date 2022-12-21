@@ -387,26 +387,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534398895}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40f8f9282fd155f4fafeb2b26b536c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSoundClips:
-  - {fileID: 8300000, guid: f7507f9aebfa98b409b02c2ca8c463f2, type: 3}
-  - {fileID: 8300000, guid: 2ec4cccb92c9b9e41b200604b7369c26, type: 3}
-  - {fileID: 8300000, guid: 2c9ba4d542d1bc946b29b76cde154976, type: 3}
-  - {fileID: 8300000, guid: c2c32706459a553498320dad0ff33793, type: 3}
-  - {fileID: 8300000, guid: 396ee13792631444c91de3b77986a3cf, type: 3}
-  - {fileID: 8300000, guid: bb619f478c51c9a4d9d0250b61f71e0e, type: 3}
-  frequencyLevel: 2
-  minPitch: 2
-  maxPitch: 2.5
-  dialogueSpeed: 0.04
-  stopAudioSource: 1
-  makePredictable: 1
-  inputDialogue: Hello my name is Rasheeq. I am very fat.
-  dialogueText: {fileID: 314715200}
+  DialogueSoundClips: []
+  FrequencyLevel: 2
+  MinPitch: 0.5
+  MaxPitch: 3
+  DialogueSpeed: 0.04
+  StopAudioSource: 0
+  MakeDialoguePredictable: 0
+  InputDialogue: 
+  DialogueText: {fileID: 0}
 --- !u!82 &534398897
 AudioSource:
   m_ObjectHideFlags: 0
@@ -704,12 +698,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789971520}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40f8f9282fd155f4fafeb2b26b536c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSoundClips:
+  DialogueSoundClips:
   - {fileID: 8300000, guid: 6c0d30724da7d334d913d2e5844416b0, type: 3}
   - {fileID: 8300000, guid: 9062016096b9e394f9623031c8123ced, type: 3}
   - {fileID: 8300000, guid: ff2d1621cb14ed0499708e34fea720ac, type: 3}
@@ -734,14 +728,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dfda4a2afd92e1e438b11e8a91233e57, type: 3}
   - {fileID: 8300000, guid: e5e1e8ab380550c44b552d6f7c54d656, type: 3}
   - {fileID: 8300000, guid: 5d6cae4bcf9e851408f3ffa9c4d1b6e4, type: 3}
-  frequencyLevel: 4
-  minPitch: 0.9
-  maxPitch: 1.1
-  dialogueSpeed: 0.04
-  stopAudioSource: 1
-  makePredictable: 1
-  inputDialogue: Hello my name is Rasheeq. I am very fat.
-  dialogueText: {fileID: 314715200}
+  FrequencyLevel: 4
+  MinPitch: 0.9
+  MaxPitch: 1.1
+  DialogueSpeed: 0.04
+  StopAudioSource: 1
+  MakeDialoguePredictable: 1
+  InputDialogue: Hello, my name is Rasheeq. I am tired. I want to sleep.
+  DialogueText: {fileID: 314715200}
 --- !u!82 &789971522
 AudioSource:
   m_ObjectHideFlags: 0
@@ -752,7 +746,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 48fbb3a8895ee4440853288f7d624757, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1102,39 +1096,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f8f9282fd155f4fafeb2b26b536c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueSoundClips:
-  - {fileID: 8300000, guid: 9742e1a37de75474f88e11179b841115, type: 3}
-  - {fileID: 8300000, guid: 02df25240932ff845aa779f7e10cfa4b, type: 3}
-  - {fileID: 8300000, guid: 86c21c1964e73e74aa6c3fe73da51a22, type: 3}
-  - {fileID: 8300000, guid: 7b85775c3707a6a4b863f61bb920a97a, type: 3}
-  - {fileID: 8300000, guid: ca3a803d25956ff4582d429efdd1c382, type: 3}
-  - {fileID: 8300000, guid: ce101063703b36042a1677f4aa7f5d05, type: 3}
-  - {fileID: 8300000, guid: 205f5238010818f43b1c6106ce7be9b8, type: 3}
-  - {fileID: 8300000, guid: 92562bfd85e36dd4aabc204f87d5dd0a, type: 3}
-  - {fileID: 8300000, guid: 4a9e2f578e0d1bb499bcf1baccef0ddf, type: 3}
-  - {fileID: 8300000, guid: 63a670cd6fad36b4b8c92423bfd27071, type: 3}
-  - {fileID: 8300000, guid: 85c22b9cc9eac4c459419512563566e4, type: 3}
-  - {fileID: 8300000, guid: 2ea92f81263b83740bf6443e5a9931bb, type: 3}
-  - {fileID: 8300000, guid: 3e664322d15693a4ebdf5a23cb700372, type: 3}
-  - {fileID: 8300000, guid: cc12129f0509c5d4d8a67bdb81598b24, type: 3}
-  - {fileID: 8300000, guid: 40c38e7b50b3b7f4092a0934a50041a5, type: 3}
-  - {fileID: 8300000, guid: c6b81e40662c9524191cf862d416b7de, type: 3}
-  - {fileID: 8300000, guid: dc98b4506b2ed8b42addbb6ede93a07d, type: 3}
-  - {fileID: 8300000, guid: 5903bc11b4d73c84d845d03195b729ee, type: 3}
-  - {fileID: 8300000, guid: d846c9f17a937004a9b1b5ec128e686d, type: 3}
-  - {fileID: 8300000, guid: 945e0fea845119a428c86e739ef83d55, type: 3}
-  - {fileID: 8300000, guid: abf62d3b21b2c0049a52bbc447ad7352, type: 3}
-  - {fileID: 8300000, guid: e5867ea8ec5a47a459f98c7188381b9e, type: 3}
-  - {fileID: 8300000, guid: bb1016c444e0ac64bb001a3f087652d6, type: 3}
-  - {fileID: 8300000, guid: 2e25d240689acdc4aa5acc29c1ca47e1, type: 3}
-  frequencyLevel: 2
-  minPitch: 0.5
-  maxPitch: 3
-  dialogueSpeed: 0.04
-  stopAudioSource: 1
-  makePredictable: 1
-  inputDialogue: Hello my name is Rasheeq. I am very fat.
-  dialogueText: {fileID: 314715200}
+  DialogueSoundClips:
+  - {fileID: 8300000, guid: cedb230ef32412447b5b395d24d0a762, type: 3}
+  - {fileID: 8300000, guid: 25e5e8df03c703342b672b23a0225717, type: 3}
+  - {fileID: 8300000, guid: 6747b014e4afc3a4580a298047a77c68, type: 3}
+  - {fileID: 8300000, guid: 66d31051195e2084c8e74acd509047fd, type: 3}
+  - {fileID: 8300000, guid: 0954d1088e313bc4a8e23dcf05f93b70, type: 3}
+  - {fileID: 8300000, guid: 574ee7f10239c604cbcf0bc29b6cf7de, type: 3}
+  FrequencyLevel: 2
+  MinPitch: 0.5
+  MaxPitch: 3
+  DialogueSpeed: 0.04
+  StopAudioSource: 1
+  MakeDialoguePredictable: 1
+  InputDialogue: You are going to the hospital
+  DialogueText: {fileID: 314715200}
 --- !u!82 &1237022727
 AudioSource:
   m_ObjectHideFlags: 0
