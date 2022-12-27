@@ -444,10 +444,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7e0d7cc7fa0a1344f9c748a3fa91b522, type: 3}
   - {fileID: 8300000, guid: 805ba5adb8078b64fb1af7c2ba59e385, type: 3}
   - {fileID: 8300000, guid: c10727bc815c42d45b835f68ff823694, type: 3}
-  FrequencyLevel: 3
-  MinPitch: 0.9
-  MaxPitch: 1
-  DialogueSpeed: 0.04
+  FrequencyLevel: 2
+  MinPitch: 1.92
+  MaxPitch: 2.08
+  DialogueSpeed: 0.05
   StopAudioSource: 0
   MakeDialoguePredictable: 0
   InputDialogue: You are going to the hospital
